@@ -1,12 +1,32 @@
-import React from 'react'
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import InquiryForm from './components/InquiryForm';
+import DubaiJobApplicationForm from './components/DubaiJobApplicationForm';
 
-const App = () => {
+function App() {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold text-red-400">Welcome to My App</h1>
-      <p className="mt-2 text-gray-600">This is a simple React application.</p>
-    </div>
-  )
+    <Router>
+      <div className="App">
+        <InquiryForm/>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+<Route path="/DubaiJobApplicationForm" element={<DubaiJobApplicationForm />} />
+          {/* <Route path="/services" element={<Services />} /> */}
+          {/* <Route path="/services/:service" element={<Services />} /> */}
+          {/* <Route path="/how-it-works" element={<HowItWorks />} /> */}
+          {/* <Route path="/faq" element={<FAQ />} /> */}
+          {/* <Route path="/register" element={<Register />} /> */}
+          {/* <Route path="/login" element={<Login />} /> */}
+        </Routes>
+        <Footer/>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
