@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaLinkedinIn, FaGithub, FaEnvelope, FaChevronDown, FaChevronUp, FaPhone, FaTimes, FaFileDownload, FaChartLine, FaSearch, FaUserPlus, FaInstagram, FaFacebook } from "react-icons/fa";
+import Images from '../assets/images/images'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -89,7 +90,7 @@ const Navbar = () => {
                         <div className="flex items-center space-x-3">
                             {/* Logo Image */}
                             <img
-                                src="/logo.png"
+                                src={Images.logo}
                                 alt="Naukri in Dubai Logo"
                                 className="h-20  md:h-20 object-contain"
                                 onError={(e) => {
@@ -194,12 +195,14 @@ const Navbar = () => {
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                         <Link
                             to="/DubaiJobApplicationForm"
-                            className="flex items-center bg-white text-[#030A8C] px-4 py-2 shadow-lg hover:shadow-xl transition-all duration-300 font-bold text-sm border border-[#030A8C] hover:bg-gray-50 group"
+                            className="flex items-center justify-center bg-white text-[#030A8C] px-6 py-3 font-bold text-sm border border-[#030A8C] shadow-lg 
+               transition-all duration-300 hover:bg-[#F20505] hover:border-[#F20505]  hover:text-white hover:shadow-2xl group"
                         >
-                            <FaSearch className="mr-2 group-hover:scale-110 transition-transform duration-300" />
+                            <FaSearch className="mr-2 transition-transform duration-300 group-hover:scale-125" />
                             REGISTER NOW
                         </Link>
                     </motion.div>
+
 
                     {/* <motion.a
                         href="/register"

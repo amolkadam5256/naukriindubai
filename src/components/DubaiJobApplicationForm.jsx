@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { 
-  FaUser, 
-  FaEnvelope, 
-  FaPhone, 
+import {
+  FaUser,
+  FaEnvelope,
+  FaPhone,
   FaBriefcase,
   FaGraduationCap,
   FaMapMarkerAlt,
@@ -47,13 +47,13 @@ const DubaiJobApplicationForm = ({ onClose }) => {
     maritalStatus: "",
     passportNumber: "",
     passportExpiry: "",
-    
+
     // Contact Information
     currentLocation: "",
     address: "",
     linkedinProfile: "",
     skypeId: "",
-    
+
     // Professional Information
     currentRole: "",
     totalExperience: "",
@@ -65,7 +65,7 @@ const DubaiJobApplicationForm = ({ onClose }) => {
     expectedSalaryCurrency: "AED",
     noticePeriod: "",
     reasonForLeaving: "",
-    
+
     // Education
     highestQualification: "",
     fieldOfStudy: "",
@@ -74,17 +74,17 @@ const DubaiJobApplicationForm = ({ onClose }) => {
     gpa: "",
     additionalCertifications: "",
     coursesCompleted: "",
-    
+
     // Skills & Competencies
     technicalSkills: "",
     softSkills: "",
     softwareSkills: "",
     programmingLanguages: "",
-    
+
     // Languages
     languages: "",
     languageProficiencies: "{}",
-    
+
     // Dubai Specific
     visaStatus: "",
     uaeExperience: "",
@@ -92,7 +92,7 @@ const DubaiJobApplicationForm = ({ onClose }) => {
     relocationReadiness: "",
     accommodationNeeded: "",
     familyStatus: "",
-    
+
     // Job Preferences
     preferredIndustries: "",
     jobLevel: "",
@@ -100,18 +100,18 @@ const DubaiJobApplicationForm = ({ onClose }) => {
     workMode: "",
     companySize: "",
     expectedBenefits: "",
-    
+
     // Career Information
     careerGoals: "",
     strengths: "",
     areasForImprovement: "",
     achievements: "",
-    
+
     // Documents
     coverLetter: "",
     portfolioLink: "",
     photo: null,
-    
+
     // Additional Information
     whyDubai: "",
     whyChooseYou: "",
@@ -119,7 +119,7 @@ const DubaiJobApplicationForm = ({ onClose }) => {
     reference1: "",
     reference2: "",
     emergencyContact: "",
-    
+
     // Service Preferences
     servicesNeeded: "",
     consultationTiming: "",
@@ -162,7 +162,7 @@ const DubaiJobApplicationForm = ({ onClose }) => {
 
   // Comprehensive options
   const nationalities = [
-    "Indian", "Pakistani", "Bangladeshi", "Sri Lankan", "Nepalese", 
+    "Indian", "Pakistani", "Bangladeshi", "Sri Lankan", "Nepalese",
     "Filipino", "Egyptian", "Jordanian", "Lebanese", "Syrian",
     "Yemeni", "Sudanese", "Tunisian", "Moroccan", "Algerian",
     "Other Arab", "Other Asian", "European", "American", "Canadian",
@@ -226,7 +226,7 @@ const DubaiJobApplicationForm = ({ onClose }) => {
 
   const uaeExperiences = [
     "None",
-    "Less than 1 year", 
+    "Less than 1 year",
     "1-3 years",
     "3-5 years",
     "5+ years"
@@ -241,7 +241,7 @@ const DubaiJobApplicationForm = ({ onClose }) => {
 
   const accommodationOptions = [
     "Yes",
-    "No", 
+    "No",
     "Maybe"
   ];
 
@@ -287,7 +287,7 @@ const DubaiJobApplicationForm = ({ onClose }) => {
   const noticePeriods = [
     "Immediate",
     "15 days",
-    "1 month", 
+    "1 month",
     "2 months",
     "3 months"
   ];
@@ -421,7 +421,7 @@ const DubaiJobApplicationForm = ({ onClose }) => {
 
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
-    
+
     if (type === 'file') {
       setFormData(prev => ({
         ...prev,
@@ -443,13 +443,13 @@ const DubaiJobApplicationForm = ({ onClose }) => {
     try {
       // Create FormData object
       const formDataToSend = new FormData();
-      
+
       // Add essential fields first
       formDataToSend.append("access_key", "735efc9c-d698-420a-86ee-72b8a78779e4");
       formDataToSend.append("subject", `Dubai Job Application - ${formData.name}`);
       formDataToSend.append("from_name", "Naukri in Dubai Job Portal");
       formDataToSend.append("botcheck", "");
-      
+
       // Add all form fields
       Object.keys(formData).forEach(key => {
         if (formData[key] instanceof File) {
@@ -467,11 +467,11 @@ const DubaiJobApplicationForm = ({ onClose }) => {
       });
 
       const data = await response.json();
-      
+
       if (data.success) {
         setSubmitStatus("success");
         setSubmitMessage(`Thank you ${formData.name}! Your application has been successfully submitted. Our career experts will review your profile within 24 hours and contact you at ${formData.email} or ${formData.phone} with suitable Dubai opportunities.`);
-        
+
         // Reset form
         const resetData = {};
         Object.keys(formData).forEach(key => {
@@ -505,7 +505,7 @@ const DubaiJobApplicationForm = ({ onClose }) => {
 
   const renderField = (field) => {
     const IconComponent = iconComponents[field.icon];
-    
+
     switch (field.type) {
       case 'select':
         return (
@@ -518,7 +518,7 @@ const DubaiJobApplicationForm = ({ onClose }) => {
               value={formData[field.name] || ''}
               onChange={handleChange}
               required={field.required}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#030A8C] focus:border-transparent text-gray-700 bg-white"
+              className="w-full pl-10 pr-4 py-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#F20505] focus:border-transparent text-gray-700 bg-white"
             >
               <option value="">Select {field.label}</option>
               {field.options.map((option, idx) => (
@@ -527,7 +527,7 @@ const DubaiJobApplicationForm = ({ onClose }) => {
             </select>
           </div>
         );
-      
+
       case 'textarea':
         return (
           <div className="relative">
@@ -540,7 +540,7 @@ const DubaiJobApplicationForm = ({ onClose }) => {
               onChange={handleChange}
               required={field.required}
               rows={4}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-[#030A8C] focus:border-transparent text-gray-700 bg-white resize-vertical"
+              className="w-full pl-10 pr-4 py-3 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-[#F20505] focus:border-transparent text-gray-700 bg-white resize-vertical"
               placeholder={field.placeholder}
             />
           </div>
@@ -558,11 +558,11 @@ const DubaiJobApplicationForm = ({ onClose }) => {
               onChange={handleChange}
               required={field.required}
               accept={field.accept}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-[#030A8C] focus:border-transparent file:mr-4 file:py-2 file:px-4  file:border-0 file:text-sm file:font-semibold file:bg-[#030A8C] file:text-white hover:file:bg-[#02076e]"
+              className="w-full pl-10 pr-4 py-3 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-[#F20505] focus:border-transparent file:mr-4 file:py-2 file:px-4  file:border-0 file:text-sm file:font-semibold file:bg-[#030A8C] file:text-white hover:file:bg-[#02076e]"
             />
           </div>
         );
-      
+
       default:
         return (
           <div className="relative">
@@ -575,7 +575,7 @@ const DubaiJobApplicationForm = ({ onClose }) => {
               value={formData[field.name] || ''}
               onChange={handleChange}
               required={field.required}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-[#030A8C] focus:border-transparent text-gray-700 bg-white"
+              className="w-full pl-10 pr-4 py-3 border border-gray-300  focus:outline-none focus:ring-2 focus:ring-[#F20505] focus:border-transparent text-gray-700 bg-white"
               placeholder={field.placeholder}
             />
           </div>
@@ -588,7 +588,7 @@ const DubaiJobApplicationForm = ({ onClose }) => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-gray-100 py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Sidebar */}
           <div className="lg:col-span-1">
@@ -602,16 +602,14 @@ const DubaiJobApplicationForm = ({ onClose }) => {
                   <button
                     key={index}
                     onClick={() => setCurrentSection(index)}
-                    className={`w-full text-left p-3  transition-all duration-200 border ${
-                      currentSection === index 
-                        ? 'bg-[#030A8C] text-white shadow-md border-[#030A8C]' 
-                        : 'bg-gray-50 text-gray-700 hover:bg-blue-50 border-gray-200 hover:border-[#030A8C]'
-                    }`}
+                    className={`w-full text-left p-3  transition-all duration-200 border ${currentSection === index
+                        ? 'bg-[#030A8C] text-white shadow-md border-[#030A8C]'
+                        : 'bg-gray-50 text-gray-700 hover:bg-blue-50 border-gray-200 hover:border-[#F20505]'
+                      }`}
                   >
                     <div className="flex items-center">
-                      <div className={`w-8 h-8  flex items-center justify-center mr-3 text-sm font-bold ${
-                        currentSection === index ? 'bg-white text-[#030A8C]' : 'bg-[#030A8C] text-white'
-                      }`}>
+                      <div className={`w-8 h-8  flex items-center justify-center mr-3 text-sm font-bold ${currentSection === index ? 'bg-white text-[#030A8C]' : 'bg-[#030A8C] text-white'
+                        }`}>
                         {index + 1}
                       </div>
                       <div className="text-left">
@@ -626,21 +624,43 @@ const DubaiJobApplicationForm = ({ onClose }) => {
                   </button>
                 ))}
               </div>
-              
+
               {/* Quick Stats */}
-              <div className="mt-8 p-4 bg-gradient-to-r from-green-50 to-emerald-50  border border-green-200">
-                <h4 className="font-semibold text-green-800 mb-2 flex items-center">
-                  <FaStar className="mr-2 text-green-600" />
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                className="mt-8 p-6  border border-[#030A8C]/30  transition-all duration-500"
+              >
+                <motion.h4
+                  whileHover={{ scale: 1.03 }}
+                  className="font-semibold text-[#030A8C] mb-3 flex items-center text-lg"
+                >
+                  <FaStar className="mr-2 text-[#F20505]" />
                   Why Choose Us?
-                </h4>
-                <ul className="text-sm text-green-700 space-y-1">
-                  <li className="flex items-center">✅ 500+ Partner Companies</li>
-                  <li className="flex items-center">✅ 24-48 Hour Response</li>
-                  <li className="flex items-center">✅ Visa & Relocation Support</li>
-                  <li className="flex items-center">✅ Free Career Consultation</li>
-                  <li className="flex items-center">✅ 95% Success Rate</li>
+                </motion.h4>
+
+                <ul className="text-sm text-gray-800 space-y-2">
+                  {[
+                    "500+ Partner Companies",
+                    "24-48 Hour Response",
+                    "Visa & Relocation Support",
+                    "Free Career Consultation",
+                    "95% Success Rate",
+                  ].map((item, index) => (
+                    <motion.li
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 * index, duration: 0.4 }}
+                      whileHover={{ x: 5, color: "#F20505" }}
+                      className="flex items-center font-medium"
+                    >
+                      <FaStar className="mr-2 text-[#030A8C] text-xs" />
+                      {item}
+                    </motion.li>
+                  ))}
                 </ul>
-              </div>
+              </motion.div>
+
 
               {/* Support Info */}
               <div className="mt-4 p-4 bg-blue-50  border border-blue-200">
@@ -679,8 +699,8 @@ const DubaiJobApplicationForm = ({ onClose }) => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {sections[currentSection].fields.map((field, index) => (
-                    <div 
-                      key={index} 
+                    <div
+                      key={index}
                       className={`space-y-2 ${field.type === 'textarea' ? 'md:col-span-2' : ''}`}
                     >
                       <label className="block text-sm font-semibold text-gray-700 flex items-center">
@@ -699,23 +719,23 @@ const DubaiJobApplicationForm = ({ onClose }) => {
                   type="button"
                   onClick={prevSection}
                   disabled={currentSection === 0}
-                  className="px-8 py-3 bg-gray-500 text-white  hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center font-semibold shadow-sm"
+                  className="px-8 py-3 bg-gray-500 text-white  hover:bg-[#F20505] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex items-center font-semibold shadow-sm"
                 >
                   <FaArrowLeft className="mr-2" />
                   Previous
                 </button>
-                
+
                 <div className="text-center">
                   <span className="text-sm text-gray-600 font-medium">
                     Step {currentSection + 1} of {sections.length}
                   </span>
                 </div>
-                
+
                 {currentSection < sections.length - 1 ? (
                   <button
                     type="button"
                     onClick={nextSection}
-                    className="px-8 py-3 bg-[#030A8C] text-white  hover:bg-[#02076e] transition-all duration-200 flex items-center font-semibold shadow-sm hover:shadow-md"
+                    className="px-8 py-3 bg-[#030A8C] text-white  hover:bg-[#F20505] transition-all duration-200 flex items-center font-semibold shadow-sm hover:shadow-md"
                   >
                     Next Section
                     <FaArrowLeft className="ml-2 transform rotate-180" />
@@ -749,11 +769,10 @@ const DubaiJobApplicationForm = ({ onClose }) => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className={`mt-6 p-8  border-l-4 shadow-lg ${
-                  submitStatus === "success" 
-                    ? "bg-gradient-to-r from-green-50 to-emerald-50 border-green-500 text-green-800" 
+                className={`mt-6 p-8  border-l-4 shadow-lg ${submitStatus === "success"
+                    ? "bg-gradient-to-r from-green-50 to-emerald-50 border-green-500 text-green-800"
                     : "bg-gradient-to-r from-red-50 to-pink-50 border-red-500 text-red-800"
-                }`}
+                  }`}
               >
                 <div className="flex items-start space-x-4">
                   {submitStatus === "success" ? (
