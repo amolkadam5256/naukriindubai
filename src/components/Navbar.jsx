@@ -321,15 +321,15 @@ const Navbar = () => {
 
                             {/* Mobile Actions */}
                             <div className="mt-8 pt-6 border-t border-gray-200 space-y-3">
-                                <motion.a
-                                    href="/jobs"
+                                <Link
+                            to="/DubaiJobApplicationForm"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                     className="flex items-center justify-center bg-white text-[#030A8C] px-6 py-4 shadow-lg font-bold text-lg border border-[#030A8C] w-full"
                                 >
                                     <FaSearch className="mr-3 text-lg" />
                                     REGISTER NOW
-                                </motion.a>
+                                </Link>
 
                                 {/* <motion.a
                                     href="/register"
