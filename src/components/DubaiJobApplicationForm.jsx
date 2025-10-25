@@ -616,11 +616,11 @@ const DubaiJobApplicationForm = ({ onClose }) => {
                       </div>
                       <div className="text-left">
                         <span className="font-medium block">{section.title}</span>
-                        <span className={`text-xs mt-1 block ${
+                        {/* <span className={`text-xs mt-1 block ${
                           currentSection === index ? 'text-blue-100' : 'text-gray-500'
                         }`}>
                           {section.description}
-                        </span>
+                        </span> */}
                       </div>
                     </div>
                   </button>
