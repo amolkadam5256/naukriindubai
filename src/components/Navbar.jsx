@@ -32,7 +32,7 @@ const Navbar = () => {
 
     const menuItems = [
         { name: "Home", path: "/" },
-        { name: "Jobs", path: "/jobs" },
+        { name: "About", path: "/about" },
         {
             name: "Services",
             path: "/services",
@@ -46,6 +46,7 @@ const Navbar = () => {
         },
         { name: "How It Works", path: "/how-it-works" },
         { name: "FAQ", path: "/faq" },
+        { name: "Contact", path: "/contact" },
     ];
 
     const socialLinks = [
