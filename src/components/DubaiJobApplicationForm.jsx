@@ -627,11 +627,9 @@ const DubaiJobApplicationForm = ({ onClose }) => {
 
               {/* Quick Stats */}
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
                 className="mt-8 p-6  border border-[#030A8C]/30  transition-all duration-500"
               >
                 <motion.h4
-                  whileHover={{ scale: 1.03 }}
                   className="font-semibold text-[#030A8C] mb-3 flex items-center text-lg"
                 >
                   <FaStar className="mr-2 text-[#F20505]" />
