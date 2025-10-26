@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Images from '../../assets/images/images';
 
-const JobLeads = () => {
+const WhyNaukriindubai = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const totalSlides = 2;
 
@@ -9,64 +9,66 @@ const JobLeads = () => {
         [
             {
                 number: "Advantage 01",
-                title: "Every job. One platform.",
+                title: "Tailored Job Matches",
                 description:
-                    "No more jumping between sites. See every relevant job in one place—and get notified instantly when new opportunities appear.",
+                    "Stop sifting through irrelevant openings. We understand your skills, experience, and career goals to bring you only the most suitable opportunities.",
                 image: Images.job_hunt,
             },
             {
                 number: "Advantage 02",
-                title: "Win more interviews",
+                title: "Boost Your Response Rate",
                 description:
-                "Craft a standout resume in ten minutes—ATS-proof, tailored, AI-powered guidance, zero stress.",
+                    "Our insights on what recruiters are looking for help you craft resumes and cover letters that pass screening software and grab hiring managers’ attention.",
                 image: Images.interview,
             },
             {
                 number: "Advantage 03",
-                title: "Your shortcut to unlisted jobs",
+                title: "Access Hidden Opportunities",
                 description:
-                "We match you with headhunters and recruiters who open doors to hidden, higher paying roles.",
+                    "Many top roles are never advertised. Our platform connects you directly with headhunters, giving you exclusive access to positions others won’t see.",
                 image: Images.unlisted_jobs,
             },
             {
                 number: "Advantage 04",
-                title: "Cover letters that get noticed",
+                title: "Stand Out in Interviews",
                 description:
-                "Let us craft the perfect, tailored letter for every application.",
+                    "We provide interview coaching and actionable tips so you can confidently impress recruiters and secure the roles you aspire to.",
                 image: Images.letters_cover,
             },
         ],
         [
             {
                 number: "Advantage 05",
-                title: "Learn, apply, get hired.",
+                title: "Master Your Career Journey",
                 description:
-                "Get instant access to MasterClasses, guides, and professional templates.",
+                    "Gain access to expert-led MasterClasses, guides, and professional templates that accelerate your growth and job search success.",
                 image: Images.hired,
             },
             {
                 number: "Advantage 06",
-                title: "Guided every step of the way",
+                title: "Guided Support at Every Step",
                 description:
-                "Wherever you are in your journey, our JL Assistant will give you tailored advice always one click away.",
+                    "Our AI-powered JL Assistant provides personalized advice at every stage of your career journey, keeping you on track toward your goals.",
                 image: Images.Guided,
             },
             {
                 number: "Advantage 07",
-                title: "Interview preparation",
+                title: "Interview Readiness",
                 description:
-                "Practice with mock interviews and get feedback to improve your performance.",
+                    "Practice mock interviews, receive constructive feedback, and refine your answers to confidently excel in every conversation with recruiters.",
                 image: Images.preparation,
             },
             {
                 number: "Advantage 08",
-                title: "Salary negotiation",
+                title: "Maximize Your Compensation",
                 description:
-                "Get expert advice on negotiating your salary to maximize your earning potential.",
+                    "Learn proven strategies for salary negotiation to secure competitive packages that reflect your true value.",
                 image: Images.Salary,
             },
         ],
     ];
+
+
 
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -92,10 +94,10 @@ const JobLeads = () => {
                         {/* Title Section */}
                         <div className="flex-1">
                             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                                Power in your hands
+                                Why naukriindubai?
                             </h1>
-                            <p className="text-lg md:text-xl text-gray-700 max-w-2xl  mb-8">
-                                We have everything you need to land your next role.
+                            <p className="text-lg md:text-xl text-gray-700 max-w-2xl mb-8">
+                                We don't just build resumes. We're your guide to succeeding in your job hunt. With true personalization, access to headhunters, interview coaching, and more, we're the job platform on your side.
                             </p>
                         </div>
 
@@ -106,7 +108,7 @@ const JobLeads = () => {
                             <div className="flex space-x-2">
                                 <button
                                     onClick={prevSlide}
-                                    className="w-10 h-10 bg-[#030A8C] text-white  flex items-center justify-center hover:bg-[#F20505] transition-colors duration-300"
+                                    className="w-10 h-10 bg-[#030A8C] text-white flex items-center justify-center hover:bg-[#F20505] transition-colors duration-300"
                                 >
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -114,7 +116,7 @@ const JobLeads = () => {
                                 </button>
                                 <button
                                     onClick={nextSlide}
-                                    className="w-10 h-10 bg-[#030A8C] text-white  flex items-center justify-center hover:bg-[#F20505] transition-colors duration-300"
+                                    className="w-10 h-10 bg-[#030A8C] text-white flex items-center justify-center hover:bg-[#F20505] transition-colors duration-300"
                                 >
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -140,12 +142,12 @@ const JobLeads = () => {
                                         {slide.map((advantage, index) => (
                                             <div
                                                 key={index}
-                                                className="bg-white  shadow-lg p-6 border-t-4 border-[#F20505] hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                                                className="bg-white shadow-lg p-6 border-t-4 border-[#F20505] hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
                                             >
                                                 {/* Content Section */}
                                                 <div className="flex-1">
                                                     <div className="text-sm font-semibold text-[#030A8C] mb-2">
-                                                        {advantage.number}
+                                                        naukriindubai Reason
                                                     </div>
                                                     <h3 className="text-xl font-bold mb-3">
                                                         {advantage.title}
@@ -154,7 +156,7 @@ const JobLeads = () => {
                                                         {advantage.description}
                                                     </p>
                                                 </div>
-                                                
+
                                                 {/* Image Section */}
                                                 <div className="my-2 flex justify-center">
                                                     <img
@@ -176,4 +178,4 @@ const JobLeads = () => {
     );
 };
 
-export default JobLeads;
+export default WhyNaukriindubai;

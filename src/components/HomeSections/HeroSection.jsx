@@ -139,7 +139,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-center overflow-hidden py-3">
+    <section className="relative flex flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-center overflow-hidden py-3">
       <div className="z-10 w-full max-w-9xl px-4">
         <motion.h1 
           initial={{ opacity: 0, y: -50 }}
