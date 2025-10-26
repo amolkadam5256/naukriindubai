@@ -11,19 +11,14 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <InquiryForm/>
+        <InquiryForm />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-<Route path="/DubaiJobApplicationForm" element={<DubaiJobApplicationForm />} />
+          <Route path="/DubaiJobApplicationForm" element={<DubaiJobApplicationForm />} />
           {/* <Route path="/services" element={<Services />} /> */}
-          {/* <Route path="/services/:service" element={<Services />} /> */}
-          {/* <Route path="/how-it-works" element={<HowItWorks />} /> */}
-          {/* <Route path="/faq" element={<FAQ />} /> */}
-          {/* <Route path="/register" element={<Register />} /> */}
-          {/* <Route path="/login" element={<Login />} /> */}
         </Routes>
-        <Footer/>
+        <Footer />
       </div>
     </Router>
   );

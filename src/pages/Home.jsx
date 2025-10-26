@@ -1,61 +1,19 @@
 import React from 'react'
+import HeroSection from '../components/HomeSections/HeroSection'
+import CandidateFirst from '../components/HomeSections/CandidateFirst'
+import JobLeads from '../components/HomeSections/JobLeads'
+import JourneySection from '../components/HomeSections/JourneySection'
 
 const Home = () => {
   return (
-    <div>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-      <p>Welcome to the Home Page</p>
-    </div>
+    <>
+    <main className='pt-20'>
+      <HeroSection/>
+      <CandidateFirst/>
+      <JobLeads/>
+      <JourneySection/>
+      </main>
+    </>
   )
 }
 
