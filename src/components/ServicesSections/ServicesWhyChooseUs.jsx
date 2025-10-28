@@ -54,8 +54,6 @@ export default function ServicesWhyChooseUs() {
 
   return (
     <section className="relative bg-gradient-to-b from-white via-[#f8f9ff] to-[#fff5f5] py-24 px-6 overflow-hidden">
-      {/* Background Decorative Glow */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-[#030A8C]/10 via-transparent to-[#F20505]/10 blur-2xl pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Heading */}
