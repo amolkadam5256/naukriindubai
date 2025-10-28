@@ -628,7 +628,7 @@ const DubaiJobApplicationForm = ({ onClose }) => {
               {/* Quick Stats */}
               <motion.div
                 className="mt-8 p-6  border border-[#030A8C]/30  transition-all duration-500"
-              >
+              > 
                 <motion.h4
                   className="font-semibold text-[#030A8C] mb-3 flex items-center text-lg"
                 >

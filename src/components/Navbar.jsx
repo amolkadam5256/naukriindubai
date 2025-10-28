@@ -37,13 +37,34 @@ const Navbar = () => {
             name: "Services",
             path: "/services",
             dropdown: [
-                { name: "Resume Review", path: "/services/resume-review" },
-                { name: "Cover Letter Help", path: "/services/cover-letter" },
-                { name: "Interview Coaching", path: "/services/interview-coaching" },
-                { name: "Headhunter Access", path: "/services/headhunter-access" },
-                { name: "Career Counseling", path: "/services/career-counseling" },
-            ]
+                {
+                    name: "Career Essentials",
+                    path: "/services/career-essentials",
+                    // Includes: Resume Review, Cover Letter Help, LinkedIn Profile Optimization, Profile Branding Consultation
+                },
+                {
+                    name: "Interview & Placement",
+                    path: "/services/interview-placement",
+                    // Includes: Interview Coaching, Dubai Job Placement, Headhunter Access, Employer Connections
+                },
+                {
+                    name: "Career Counseling & Consultation",
+                    path: "/services/career-consultation",
+                    // Includes: One-on-One Career Counseling, Gulf Market Orientation, Career Growth Strategy, Student Consultation
+                },
+                {
+                    name: "Skill Development & Internship",
+                    path: "/services/skill-internship",
+                    // Includes: Skill Development Programs, Internship Assistance, Upskilling Workshops, Certification Guidance
+                },
+                {
+                    name: "Visa, Relocation & Work Setup",
+                    path: "/services/visa-relocation",
+                    // Includes: Visa Process Support, Relocation Consultation, Dubai Work Setup Guidance, Accommodation & Documentation Help
+                },
+            ],
         },
+
         { name: "How It Works", path: "/how-it-works" },
         { name: "FAQ", path: "/faq" },
         { name: "Contact", path: "/contact" },
@@ -324,7 +345,7 @@ const Navbar = () => {
                             {/* Mobile Actions */}
                             <div className="mt-8 pt-6 border-t border-gray-200 space-y-3">
                                 <Link
-                            to="/DubaiJobApplicationForm"
+                                    to="/DubaiJobApplicationForm"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                     className="flex items-center justify-center bg-white text-[#030A8C] px-6 py-4 shadow-lg font-bold text-lg border border-[#030A8C] w-full"
