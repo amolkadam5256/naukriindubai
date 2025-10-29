@@ -15,7 +15,7 @@ export default function ServiceHeroSection({
       "Visa & Relocation Support",
     ],
     contact: {
-      phone: "+971 XXX XXX XXX",
+      phone: "+971 50 576 1914",
       email: "careers@naukriindubai.com",
     },
   },
