@@ -8,22 +8,19 @@ import {
   FaMapMarkerAlt,
   FaCheckCircle,
   FaExclamationCircle,
-  FaFileDownload,
   FaArrowRight,
   FaInstagram,
   FaFacebook,
-  FaTwitter,
-  FaBriefcase,
-  FaUserTie,
-  FaHeadset
+  FaHeadset,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Images from "../assets/images/images";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const primaryColor = "#030A8C"; // Navy Blue
-  const secondaryColor = "#F20505"; // Red
+  const primaryColor = "#030A8C";
+  const secondaryColor = "#F20505";
+
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
@@ -33,51 +30,49 @@ const Footer = () => {
     {
       title: "Quick Links",
       links: [
-        { name: "Home", path: "/", icon: <FaArrowRight className="text-xs" /> },
-        { name: "Jobs", path: "/jobs", icon: <FaArrowRight className="text-xs" /> },
-        { name: "Services", path: "/services", icon: <FaArrowRight className="text-xs" /> },
-        { name: "How It Works", path: "/how-it-works", icon: <FaArrowRight className="text-xs" /> },
-        { name: "FAQ", path: "/faq", icon: <FaArrowRight className="text-xs" /> },
-        { name: "Contact", path: "/contact", icon: <FaArrowRight className="text-xs" /> }
-      ]
+        { name: "Home", path: "/" },
+        { name: "About", path: "/about" },
+        { name: "Services", path: "/services" },
+        { name: "Contact", path: "/contact" },
+      ],
     },
     {
       title: "Our Services",
       links: [
-        { name: "Resume Review", path: "/services/resume-review" },
-        { name: "Cover Letter Help", path: "/services/cover-letter" },
-        { name: "Interview Coaching", path: "/services/interview-coaching" },
-        { name: "Headhunter Access", path: "/services/headhunter-access" },
-        { name: "Career Counseling", path: "/services/career-counseling" },
-        { name: "Job Matching", path: "/services/job-matching" }
-      ]
-    }
+        { name: "Career Essentials", path: "/services/career-essentials" },
+        { name: "Interview Placement", path: "/services/interview-placement" },
+        { name: "Career Consultation", path: "/services/career-consultation" },
+        { name: "Skill Development & Internship", path: "/services/skill-internship" },
+        { name: "Visa, Relocation & Work Setup", path: "/services/visa-relocation" },
+      ],
+    },
   ];
+
 
   const socialLinks = [
     {
       icon: <FaLinkedinIn />,
       url: "https://www.linkedin.com/company/naukriindubai",
       color: "#0077B5",
-      name: "LinkedIn"
+      name: "LinkedIn",
     },
     {
       icon: <FaInstagram />,
       url: "https://instagram.com/naukriindubai",
       color: "#E4405F",
-      name: "Instagram"
+      name: "Instagram",
     },
     {
       icon: <FaFacebook />,
       url: "https://facebook.com/naukriindubai",
       color: "#1877F2",
-      name: "Facebook"
+      name: "Facebook",
     },
     {
       icon: <FaEnvelope />,
       url: "mailto:info@naukriindubai.com",
       color: "#EA4335",
-      name: "Email"
+      name: "Email",
     },
   ];
 
@@ -85,38 +80,54 @@ const Footer = () => {
     {
       icon: <FaMapMarkerAlt className="text-xs" />,
       text: "Dubai, UAE | Serving Indian Professionals",
-      color: primaryColor
+      color: primaryColor,
     },
     {
       icon: <FaPhone className="text-xs" />,
       text: "+971 XXX XXX XXX",
       color: secondaryColor,
-      href: "tel:+971XXXXXXXXX"
+      href: "tel:+971XXXXXXXXX",
     },
     {
       icon: <FaEnvelope className="text-xs" />,
       text: "info@naukriindubai.com",
       color: "#6B7280",
-      href: "mailto:info@naukriindubai.com"
+      href: "mailto:info@naukriindubai.com",
     },
     {
       icon: <FaHeadset className="text-xs" />,
       text: "24/7 Career Support",
-      color: primaryColor
-    }
+      color: primaryColor,
+    },
   ];
 
+  // ✅ Handle newsletter form using Web3Forms
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
     setMessage("");
 
+    const formData = new FormData();
+    formData.append("access_key", "735efc9c-d698-420a-86ee-72b8a78779e4"); // 🔑 Replace with your real access key
+    formData.append("email", email);
+
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setSubmitStatus("success");
-      setMessage("Subscribed successfully! You'll receive the latest Dubai job opportunities.");
-      setEmail("");
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus("success");
+        setMessage("Subscribed successfully! You'll receive the latest Dubai job alerts.");
+        setEmail("");
+      } else {
+        setSubmitStatus("error");
+        setMessage("Failed to subscribe. Please try again.");
+      }
     } catch (error) {
       setSubmitStatus("error");
       setMessage("Something went wrong. Please try again.");
@@ -127,10 +138,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-white text-gray-800 relative border-t border-gray-200">
-      {/* Top Border */}
       <div className="h-0.5 bg-gradient-to-r from-[#030A8C] via-[#F20505] to-[#030A8C]"></div>
 
-      {/* Main Footer Content */}
       <div className="max-w-screen-xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {/* Brand Section */}
         <motion.div
@@ -140,22 +149,12 @@ const Footer = () => {
           viewport={{ once: true }}
           className="space-y-4"
         >
-          <div className="flex items-center space-x-3">
-            {/* Logo Image */}
-            <motion.img
-              src={Images.logo}
-              alt="Naukri in Dubai Logo"
-              className="h-16 md:h-20 object-contain drop-shadow-md transition-transform duration-300  hover:drop-shadow-xl"
-              onError={(e) => {
-                e.target.style.display = "none";
-                e.target.nextSibling.style.display = "flex";
-              }}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              whileHover={{ rotate: 5 }}
-            />
-          </div>
+          <motion.img
+            src={Images.logo}
+            alt="Naukri in Dubai Logo"
+            className="h-16 md:h-20 object-contain drop-shadow-md transition-transform duration-300 hover:drop-shadow-xl"
+            whileHover={{ rotate: 5 }}
+          />
 
           <p className="text-gray-600 text-sm leading-relaxed">
             Your trusted partner for finding verified job opportunities in Dubai.
@@ -163,9 +162,6 @@ const Footer = () => {
             career support for your Dubai journey.
           </p>
 
-
-
-          {/* Contact Info */}
           <div className="space-y-2">
             {contactInfo.map((item, index) => (
               <motion.a
@@ -262,10 +258,11 @@ const Footer = () => {
               <motion.div
                 initial={{ opacity: 0, y: 5 }}
                 animate={{ opacity: 1, y: 0 }}
-                className={`mt-2 p-2 rounded text-xs flex items-center space-x-1 ${submitStatus === "success"
-                  ? "bg-green-100 text-green-700"
-                  : "bg-red-100 text-red-700"
-                  }`}
+                className={`mt-2 p-2 rounded text-xs flex items-center space-x-1 ${
+                  submitStatus === "success"
+                    ? "bg-green-100 text-green-700"
+                    : "bg-red-100 text-red-700"
+                }`}
               >
                 {submitStatus === "success" ? (
                   <FaCheckCircle className="flex-shrink-0" />
@@ -276,7 +273,6 @@ const Footer = () => {
               </motion.div>
             )}
           </div>
-
 
           {/* Social Links */}
           <div>
@@ -295,7 +291,7 @@ const Footer = () => {
                   whileHover={{
                     scale: 1.1,
                     backgroundColor: social.color,
-                    color: "white"
+                    color: "white",
                   }}
                   whileTap={{ scale: 0.9 }}
                   title={social.name}
@@ -308,7 +304,6 @@ const Footer = () => {
         </motion.div>
       </div>
 
-      {/* Bottom Section */}
       <div className="border-t border-gray-200 py-4">
         <div className="max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
           <motion.div
@@ -333,22 +328,13 @@ const Footer = () => {
             viewport={{ once: true }}
             className="flex space-x-4"
           >
-            <Link
-              to="/privacy"
-              className="text-gray-600 hover:text-[#F20505] transition-colors duration-200 text-xs"
-            >
+            <Link to="/privacy" className="text-gray-600 hover:text-[#F20505] transition-colors duration-200 text-xs">
               Privacy Policy
             </Link>
-            <Link
-              to="/terms"
-              className="text-gray-600 hover:text-[#F20505] transition-colors duration-200 text-xs"
-            >
+            <Link to="/terms" className="text-gray-600 hover:text-[#F20505] transition-colors duration-200 text-xs">
               Terms of Service
             </Link>
-            <Link
-              to="/contact"
-              className="text-gray-600 hover:text-[#F20505] transition-colors duration-200 text-xs"
-            >
+            <Link to="/contact" className="text-gray-600 hover:text-[#F20505] transition-colors duration-200 text-xs">
               Support
             </Link>
           </motion.div>
