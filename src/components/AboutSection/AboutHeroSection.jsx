@@ -14,9 +14,9 @@ export default function AboutHeroSection({
       "Interview coaching & salary negotiation",
     ],
     contact: {
-      phone: "+971 XXX XXX XXX",
+      phone: "+971 50 576 1914",
       email: "info@naukriindubai.com",
-      location: "Dubai, UAE | Serving Indian Professionals",
+      location: "Al Owais Building Sheikh Zayed Road, Dubai UA",
     },
     stats: {
       resumesReviewed: "0m+",

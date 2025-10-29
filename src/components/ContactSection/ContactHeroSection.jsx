@@ -9,7 +9,7 @@ export default function ContactHeroSection() {
     description:
       "Whether you’re seeking visa guidance, career consultation, or relocation assistance - our team is ready to help you take the next step. Reach out today and let’s make your Dubai career journey seamless and successful.",
     contact: {
-      phone: "+971 55 678 4321",
+      phone: "+971 50 576 1914",
       email: "connect@naukriindubai.com",
       address: "Dubai, UAE | Pune, India",
     },

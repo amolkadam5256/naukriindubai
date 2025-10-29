@@ -79,14 +79,14 @@ const Footer = () => {
   const contactInfo = [
     {
       icon: <FaMapMarkerAlt className="text-xs" />,
-      text: "Dubai, UAE | Serving Indian Professionals",
+      text: "Al Owais Building Sheikh Zayed Road, Dubai UA",
       color: primaryColor,
     },
     {
       icon: <FaPhone className="text-xs" />,
-      text: "+971 XXX XXX XXX",
+      text: "+971 50 576 1914",
       color: secondaryColor,
-      href: "tel:+971XXXXXXXXX",
+      href: "tel:+971505761914",
     },
     {
       icon: <FaEnvelope className="text-xs" />,

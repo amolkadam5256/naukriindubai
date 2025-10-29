@@ -7,8 +7,8 @@ export default function ContactInfoSection() {
     {
       icon: <Phone className="w-6 h-6 text-[#030A8C]" />,
       title: "Call / WhatsApp",
-      value: "+971 55 678 4321",
-      link: "https://wa.me/971556784321?text=Hi%20Team,%20I%20want%20to%20know%20about%20Dubai%20career%20opportunities.",
+      value: "+971 50 576 1914",
+      link: "https://wa.me/971505761914?text=Hi%20Team,%20I%20want%20to%20know%20about%20Dubai%20career%20opportunities.",
     },
     {
       icon: <Mail className="w-6 h-6 text-[#030A8C]" />,
