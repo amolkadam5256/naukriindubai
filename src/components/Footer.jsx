@@ -110,6 +110,7 @@ const Footer = () => {
 
     const formData = new FormData();
     formData.append("access_key", "4f4f700b-da1b-4957-b2a5-717e6cfaa642"); // 🔑 Replace with your real access key
+      formData.append("subject", "📰 New Newsletter Subscription from Naukri in Dubai");
     formData.append("email", email);
 
     try {
