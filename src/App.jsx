@@ -2,6 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import ErrorPage from './components/ErrorPage';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -39,6 +40,7 @@ function App() {
           <Route path="/services/career-consultation" element={<CareerConsultation />} />
           <Route path="/services/skill-internship" element={<SkillInternship />} />
           <Route path="/services/visa-relocation" element={<VisaRelocation />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
 
         <Footer />
