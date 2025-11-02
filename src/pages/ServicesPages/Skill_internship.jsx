@@ -18,7 +18,7 @@ export default function Skill_internship() {
     ],
     contact: {
       phone: "+971 55 678 4321",
-      email: "skills@naukriindubai.com",
+      email: "info@naukriindubai.com",
     },
   };
 

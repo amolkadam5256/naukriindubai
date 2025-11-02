@@ -18,7 +18,7 @@ export default function Career_consultation() {
     ],
     contact: {
       phone: "+971 55 678 4321",
-      email: "consult@naukriindubai.com",
+      email: "info@naukriindubai.com",
     },
   };
 

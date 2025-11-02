@@ -18,7 +18,7 @@ export default function InterviewPlacement() {
     ],
     contact: {
       phone: "+971 50 234 5678",
-      email: "placement@naukriindubai.com",
+      email: "info@naukriindubai.com",
     },
   };
 

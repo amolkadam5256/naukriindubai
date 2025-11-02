@@ -18,7 +18,7 @@ export default function CareerEssentials() {
     ],
     contact: {
       phone: "+971 50 123 4567",
-      email: "careers@naukriindubai.com",
+      email: "info@naukriindubai.com",
     },
   };
 

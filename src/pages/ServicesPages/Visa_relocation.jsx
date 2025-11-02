@@ -18,7 +18,7 @@ export default function Visa_relocation() {
     ],
     contact: {
       phone: "+971 55 678 4321",
-      email: "relocation@naukriindubai.com",
+      email: "info@naukriindubai.com",
     },
   };
 
