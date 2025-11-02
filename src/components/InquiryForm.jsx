@@ -117,7 +117,7 @@ const InquiryForm = () => {
     Object.keys(formData).forEach(key => {
       formDataToSend.append(key, formData[key]);
     });
-    formDataToSend.append("access_key", "735efc9c-d698-420a-86ee-72b8a78779e4");
+    formDataToSend.append("access_key", "4f4f700b-da1b-4957-b2a5-717e6cfaa642");
     formDataToSend.append("subject", "New Job Inquiry - Naukri in Dubai");
 
     try {

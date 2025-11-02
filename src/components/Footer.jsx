@@ -109,7 +109,7 @@ const Footer = () => {
     setMessage("");
 
     const formData = new FormData();
-    formData.append("access_key", "735efc9c-d698-420a-86ee-72b8a78779e4"); // 🔑 Replace with your real access key
+    formData.append("access_key", "4f4f700b-da1b-4957-b2a5-717e6cfaa642"); // 🔑 Replace with your real access key
     formData.append("email", email);
 
     try {

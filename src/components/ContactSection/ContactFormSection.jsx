@@ -36,7 +36,7 @@ const ContactFormSection = () => {
 
     try {
       const formDataToSend = new FormData();
-      formDataToSend.append("access_key", "735efc9c-d698-420a-86ee-72b8a78779e4");
+      formDataToSend.append("access_key", "4f4f700b-da1b-4957-b2a5-717e6cfaa642");
       formDataToSend.append("subject", `Contact Inquiry from ${formData.name}`);
       formDataToSend.append("from_name", "Naukri in Dubai Contact Page");
 

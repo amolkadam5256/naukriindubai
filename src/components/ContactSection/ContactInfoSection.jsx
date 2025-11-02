@@ -13,8 +13,8 @@ export default function ContactInfoSection() {
     {
       icon: <Mail className="w-6 h-6 text-[#030A8C]" />,
       title: "Email Us",
-      value: "connect@naukriindubai.com",
-      link: "mailto:connect@naukriindubai.com",
+      value: "info@naukriindubai.com",
+      link: "mailto:info@naukriindubai.com",
     },
     {
       icon: <MapPin className="w-6 h-6 text-[#030A8C]" />,
@@ -29,8 +29,8 @@ export default function ContactInfoSection() {
     {
       icon: <LifeBuoy className="w-6 h-6 text-[#030A8C]" />,
       title: "Support Email",
-      value: "support@naukriindubai.com",
-      link: "mailto:support@naukriindubai.com",
+      value: "info@naukriindubai.com",
+      link: "mailto:info@naukriindubai.com",
     },
   ];
 
